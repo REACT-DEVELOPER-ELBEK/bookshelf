@@ -1,95 +1,64 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+"use client";
+import React, { useState } from "react";
+import "./Home.scss";
+import { IoCloseCircleOutline } from "react-icons/io5";
 
-export default function Home() {
+const Home = () => {
+  const [isModalClosed, setIsModalClosed] = useState(false);
+  function closeModal(){
+    setIsModalClosed(false)
+  }
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className="home">
+      <div className={isModalClosed?"book__create__modal__container": "none"}>
+      <div className="book__create__modal">
+        <div className="book__create__modal__heading">
+          <h1>Create a book</h1>
+          <button onClick={()=>closeModal()}>
+            <IoCloseCircleOutline />
+          </button>
+        </div>
+        <div className="book__create__modal__form">
+          <div className="modal__input">
+            <label>title</label>
+            <input type="text" placeholder="Enter your title" />
+          </div>
+          <div className="modal__input">
+            <label>author</label>
+            <input type="text" placeholder="Enter your author" />
+          </div>
+          <div className="modal__input">
+            <label>cover</label>
+            <input type="text" placeholder="Enter your published" />
+          </div>
+          <div className="modal__input">
+            <label>pages</label>
+            <input type="text" placeholder="Enter your pages" />
+          </div>
+        </div>
+        <div className="book__create__modal__btns">
+          <button onClick={()=>closeModal()}>Close</button>
+          <button onClick={()=>closeModal()}>Submit</button>
         </div>
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
       </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      <div className="container">
+        <div className="home__wrapper">
+          <div className="home__nav">
+            <div className="home__nav__title">
+              <h2>
+                You’ve got <span>7 books</span>
+              </h2>
+            </div>
+            <div className="home__nav__services">
+              <input type="text" placeholder="Enter name of book" />
+              <button onClick={()=>setIsModalClosed(true)}>+ Create a book</button>
+            </div>
+          </div>
+        </div>
       </div>
-    </main>
-  )
-}
+    </div>
+  );
+};
+
+export default Home;

@@ -6,9 +6,11 @@ import React from 'react'
 import { LuBellDot } from "react-icons/lu";
 import { IoMdContact } from "react-icons/io";
 import Link from 'next/link';
+import { usePathname } from 'next/navigation'
 
 const Nav = () => {
-  return (
+    const pathname = usePathname()
+  return pathname=="/login"?<></>:(
     <nav>
         <div className="container">
             <div className="nav__wrapper">

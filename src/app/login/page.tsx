@@ -8,7 +8,7 @@ import { AiOutlineLoading } from "react-icons/ai";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation"
 
 const Login = () => {
   const navigation = useRouter();

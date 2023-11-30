@@ -1,6 +1,7 @@
 .home {
   margin-top: 62px;
   .book__create__modal__container {
+    z-index: 2;
     top: 0;
     left: 0;
     position: absolute;
@@ -135,4 +136,17 @@
 
 .none{
     display: none;
+}
+
+@keyframes loading{
+  from{
+      transform: rotate(0deg);
+  }
+  to{
+      transform: rotate(360deg);
+  }
+}
+.loading{
+  animation: 0.5s loading ease-in-out infinite;
+  font-size: 20px;
 }

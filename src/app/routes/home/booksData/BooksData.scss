@@ -1,0 +1,83 @@
+.booklist {
+  .container {
+    .booklist__wrapper {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      .book__item {
+        z-index: 1;
+        position: relative;
+        padding: 32px;
+        background: #fff;
+        border-radius: 12px;
+        border: 1px solid var(--foundation-grey-grey-50, #ebebeb);
+        background: var(--foundation-white-white-50, #fefefe);
+        box-shadow: 0px 4px 24px 0px rgba(51, 51, 51, 0.08);
+        &:hover{
+            .book__actions{
+                display: flex;
+            }
+        }
+        h1 {
+          color: var(--foundation-grey-grey-900, #151515);
+          font-size: 16px;
+          font-weight: 600;
+          max-width: 333px;
+        }
+        p {
+          color: var(--foundation-grey-grey-500, #333);
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 150%;
+          max-width: 333px;
+          font-family: Mulish;
+        }
+        &__info {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          h3 {
+            color: var(--foundation-grey-grey-500, #333);
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 15px;
+          }
+          h5 {
+            padding: 2px 12px;
+            border-radius: 8.5px;
+            background: var(--foundation-purple-purple-50, #efe6fd);
+            color: var(--foundation-purple-purple-300, #9654f4);
+            text-align: center;
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: -0.068px;
+          }
+        }
+        .book__actions {
+          position: absolute;
+          display: none;
+          flex-direction: column;
+          gap: 5px;
+          right: -30px;
+          top: 20%;
+          button {
+            font-size: 16px;
+            font-weight: 500;
+            padding: 8px;
+            border-radius: 6px 6px 6px 0px;
+            background: var(--foundation-orange-orange-500, #ff4d4f);
+            box-shadow: 0px 6px 32px 0px rgba(21, 21, 21, 0.48);
+            color: #fff;
+            &:first-child{
+                background: #FF4D4F;
+            }
+            &:last-child{
+                background: #6200ee;
+            }
+          }
+        }
+      }
+    }
+  }
+}

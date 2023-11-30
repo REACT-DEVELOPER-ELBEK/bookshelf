@@ -2,7 +2,7 @@ import { initialStateType } from "@/types/initialState.type";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const fetchBooks = createAsyncThunk("books/get", async () => {
+export const fetchBooks = createAsyncThunk("books/get", async () => {
   try{
     const response = await axios(
         "https://6544ff835a0b4b04436d689a.mockapi.io/books"

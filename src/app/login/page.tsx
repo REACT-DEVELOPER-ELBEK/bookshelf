@@ -11,7 +11,7 @@ import { ToastContainer, toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 
 const Login = () => {
-    const navigation = useRouter()
+  const navigation = useRouter();
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -24,7 +24,7 @@ const Login = () => {
       );
       const result = response.data.access_token;
       if (response.data.access_token) {
-        setLoading(false)
+        setLoading(false);
         toast.success("Successfull Sign in", {
           theme: "colored",
         });
@@ -33,7 +33,7 @@ const Login = () => {
           JSON.stringify(response.data.access_token)
         );
         setTimeout(() => {
-            navigation.push("/")
+          navigation.push("/");
         }, 1270);
         return result;
       } else {

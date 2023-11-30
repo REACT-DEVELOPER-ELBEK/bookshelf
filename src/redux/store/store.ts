@@ -1,10 +1,12 @@
 "use client"
 import { configureStore } from '@reduxjs/toolkit'
 import booksSlicer from '../slicers/getSlicer'
+import postBookSlicer from '../slicers/postBookSlicer'
 
 export const store = configureStore({
   reducer: {
     books: booksSlicer,
+    postBooks: postBookSlicer,
   },
 })
 

@@ -35,13 +35,13 @@ const BooksData = () => {
         <div className="booklist__wrapper">
           {data?.map((item: any) => (
             <div className="book__item" key={item.id}>
-              <h1>{item.data.title}</h1>
-              <p>{item.data.cover}</p>
+              <h1>{item.title}</h1>
+              <p>{item.cover}</p>
               <div className="book__item__info">
                 <h3>
-                  {item.data.author}: {item.data.publish}-year
+                  {item.author}: {item.publish}-year
                 </h3>
-                <h5>{item.data.pages} pages</h5>
+                <h5>{item.pages} pages</h5>
               </div>
               <div className="book__actions">
                 <button onClick={()=>remove(item.id)}>

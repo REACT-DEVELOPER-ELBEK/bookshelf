@@ -3,7 +3,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const deleteBook = createAsyncThunk("books/delete", async(id)=>{
-    const response = await axios.delete(`https://6544ff835a0b4b04436d689a.mockapi.io/books/${id}`)
+    const response = await axios.delete(`https://6532d892d80bd20280f61c4c.mockapi.io/books/${id}`)
     const result = response.data
     return result
 })

@@ -8,7 +8,6 @@ export const fetchBooks = createAsyncThunk("books/get", async (searchField) => {
       const response = await axios(
         `https://6532d892d80bd20280f61c4c.mockapi.io/books`
       );
-      console.log(`https://6532d892d80bd20280f61c4c.mockapi.io/books`);
       return response.data;
     } else {
       const response = await axios(

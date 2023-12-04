@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import "./Home.scss";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { AiOutlineLoading } from "react-icons/ai";
-import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
 import { postBook } from "@/redux/slicers/postBookSlicer";
 import { AppDispatch, RootState } from "@/redux/store/store";
@@ -23,7 +22,10 @@ const Home = () => {
   const [pages, setPage] = useState("");
   const [search, setSearch] = useState("");
   const navigate = useRouter();
-  if (!JSON.parse(localStorage.getItem("access_token"))) {
+  const accessTokenString = localStorage.getItem("access_token");
+
+  if (accessTokenString && JSON.parse(accessTokenString)) {
+  } else {
     navigate.push("/login");
   }
 

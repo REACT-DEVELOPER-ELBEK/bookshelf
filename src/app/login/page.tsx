@@ -34,7 +34,7 @@ const Login = () => {
         );
         setTimeout(() => {
           navigation.push("/");
-        }, 1270);
+        },400);
         return result;
       } else {
         toast.error("Wrong password or email", {

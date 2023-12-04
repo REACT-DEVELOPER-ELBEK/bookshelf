@@ -12,7 +12,6 @@ import { fetchBooks } from "@/redux/slicers/getSlicer";
 import { useRouter } from "next/navigation";
 
 const Home = () => {
-  const token = JSON.parse(localStorage.getItem("access_token"))
   const [isLoading, setIsLoading] = useState(false);
   const loading = useSelector((state: RootState) => state.postBooks.loading);
   const data = useSelector((state: RootState) => state.postBooks.data);
@@ -23,7 +22,10 @@ const Home = () => {
   const [publish, setPublish] = useState("");
   const [pages, setPage] = useState("");
   const [search, setSearch] = useState("");
-  const navigate = useRouter()
+  const navigate = useRouter();
+  if (!JSON.parse(localStorage.getItem("access_token"))) {
+    navigate.push("/login");
+  }
 
   const dispatch = useDispatch<AppDispatch>();
   useEffect(() => {
@@ -48,8 +50,8 @@ const Home = () => {
     }
   }
   function searchSubmit(e) {
-    e.preventDefault()
-      dispatch(fetchBooks(search));
+    e.preventDefault();
+    dispatch(fetchBooks(search));
   }
 
   return (
